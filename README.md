@@ -1,60 +1,102 @@
 # MDP REPRESENTATION
-
 ## AIM:
-To represent a Markov Decision Process(MDP) problem in the following ways.
-
-1.Text representation
-
-2.Graphical representation
-
-3.Python - Dictonary representation
+To represent any one real world problem in Markov Decision Problem(MDP).
 
 ## PROBLEM STATEMENT:
 ### Problem Description
-An agent needs to pick product B from a supermarket where there are three products A , B and C
+Move the snake 🐍 to reach the apple 🍏, which is the goal in a 3*3 grid.
 
 ### State Space
-{Product A , Product B , Product C}
+{0,1,2,3,4,5,6,7,8} 
 
 ### Sample State
-Product A
+2
 
 ### Action Space
-[Left , Right , Pick}
+{Up[0],Down[1],Left[2],Right[3]}
 
 ### Sample Action
-Left
+Down[1]
 
 ### Reward Function
-+1 - when an agent move to the right side and pick product B
-0 - Otherwise
+R = { +1 , if the snake eats the apple
+       0 , otherwise
 
 ### Graphical Representation
-![graphical](https://github.com/Syam-tej/mdp-representation/assets/93427224/944b2366-fe04-41e3-b974-a05724c3e37e)
+![graphical](https://github.com/saieswar1607/mdp-representation/assets/93427011/deee3fd9-11cc-4e6a-b71a-930c2f0f6998)
+
 
 ## PYTHON REPRESENTATION:
 ```
-Developed By: P Syam Tej
+Developed By: P SYAM TEJ
 Reg. No: 212221240056
 ```
-```python3
-P = {
+```python
+# Creating Dictionary
+P={
     0:{
-        0: [(1.0,0,0.0,True)],
-        1: [(1.0,0,0.0,True)]
+        0:[(0.666,0,0.0,False),(0.333,3,0.0,False)],
+        1:[(0.333,3,0.0,False),(0.333,0,0.0,False),(0.333,1,0.0,False)],
+        2:[(0.666,0,0.0,False),(0.333,3,0.0,False)],
+        3:[(0.333,1,0.0,False),(0.333,0,0.0,False),(0.333,3,0.0,False)]
     },
     1:{
-        0: [(1.0,0,0.0,True)],
-        1: [(1.0,2,1.0,True)]
+        0:[(0.333,1,0.0,False),(0.333,0,0.0,False),(0.333,2,0.0,False)],
+        1:[(0.333,4,0.0,False),(0.333,0,0.0,False),(0.333,2,0.0,False)],
+        2:[(0.333,0,0.0,False),(0.333,1,0.0,False),(0.333,4,0.0,False)],
+        3:[(0.333,2,0.0,False),(0.333,1,0.0,False),(0.333,4,0.0,False)]
     },
     2:{
-        0: [(1.0,2,0.0,True)],
-        1: [(1.0,2,0.0,True)]
+        0:[(0.666,2,0.0,False),(0.333,1,0.0,False)],
+        1:[(0.333,5,0.0,False),(0.333,1,0.0,False),(0.333,2,0.0,False)],
+        2:[(0.333,1,0.0,False),(0.333,2,0.0,False),(0.333,5,0.0,False)],
+        3:[(0.666,2,0.0,False),(0.333,5,0.0,False)]
+    },
+    3:{
+        0:[(0.333,0,0.0,False),(0.333,3,0.0,False),(0.333,4,0.0,False)],
+        1:[(0.333,6,0.0,False),(0.333,3,0.0,False),(0.333,4,0.0,False)],
+        2:[(0.333,3,0.0,False),(0.333,0,0.0,False),(0.333,6,0.0,False)],
+        3:[(0.333,4,0.0,False),(0.333,0,0.0,False),(0.333,6,0.0,False)]
+    },
+    4:{
+        0:[(0.333,1,0.0,False),(0.333,3,0.0,False),(0.333,5,0.0,False)],
+        1:[(0.333,7,0.0,False),(0.333,3,0.0,False),(0.333,5,0.0,False)],
+        2:[(0.333,3,0.0,False),(0.333,1,0.0,False),(0.333,7,0.0,False)],
+        3:[(0.333,5,0.0,False),(0.333,1,0.0,False),(0.333,7,0.0,False)]
+    },
+    5:{
+        0:[(0.333,2,0.0,False),(0.333,4,0.0,False),(0.333,5,0.0,False)],
+        1:[(0.333,8,1.0,True),(0.333,4,0.0,False),(0.333,5,0.0,False)],
+        2:[(0.333,4,0.0,False),(0.333,1,0.0,False),(0.333,7,0.0,False)],
+        3:[(0.333,5,0.0,False),(0.333,1,0.0,False),(0.333,7,0.0,False)]
+    },
+    6:{
+        0:[(0.333,3,0.0,False),(0.333,6,0.0,False),(0.333,7,0.0,False)],
+        1:[(0.666,6,0.0,False),(0.333,7,0.0,False)],
+        2:[(0.666,6,0.0,False),(0.333,3,0.0,False)],
+        3:[(0.333,7,0.0,False),(0.333,3,0.0,False),(0.333,6,0.0,False)]
+    },
+    7:{
+        0:[(0.333,4,0.0,False),(0.333,6,0.0,False),(0.333,8,1.0,True)],
+        1:[(0.333,7,0.0,False),(0.333,6,0.0,False),(0.333,8,1.0,True)],
+        2:[(0.333,6,0.0,False),(0.333,4,0.0,False),(0.333,7,0.0,False)],
+        3:[(0.333,8,1.0,True),(0.333,4,0.0,False),(0.333,7,0.0,False)]
+    },
+    8:{
+        0:[(0.333,5,0.0,False),(0.333,7,0.0,False),(0.333,8,1.0,True)],
+        1:[(0.666,8,1.0,True),(0.333,7,0.0,False)],
+        2:[(0.333,7,0.0,False),(0.333,5,0.0,False),(0.333,8,1.0,True)],
+        3:[(0.666,8,1.0,True),(0.333,5,0.0,False)]
     }
 }
 ```
+
 ## OUTPUT:
-![output](https://github.com/Syam-tej/mdp-representation/assets/93427224/05b3cc56-c3ce-459a-913e-8cc6033b5a35)
+![output](https://github.com/saieswar1607/mdp-representation/assets/93427011/2f5cebbb-88b9-462f-a161-4f768aadbb7b)
+
 
 ## RESULT:
-Thus, an environment to check whether the child plays or stay at home is created according to the weather conditions.
+Thus a real world problem is represented as Markov Decision Problem in the following ways successfully:
+
+1. Graphical Representation
+2. Python Representation
