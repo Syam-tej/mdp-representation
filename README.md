@@ -34,7 +34,7 @@ Left
 0 - Otherwise
 
 ### Graphical Representation
-![image](https://github.com/Sandhyacharu/mdp-representation/assets/75235167/3e686e89-65cc-4d25-81bb-a0eefc94ba7c)
+![grapical](https://github.com/Syam-tej/mdp-representation/assets/93427224/c3d34a48-e98c-4e15-b57a-42ef3e67857b)
 
 ## PYTHON REPRESENTATION:
 ```python3
